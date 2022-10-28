@@ -1,2 +1,3 @@
 # EgyptFWD-Embedded-Systems
-This is the egyFWD scholarship cooperating with Udacity (Professional Track).
+# Project 1 :
+Implemented a sale transaction process for a payment application
