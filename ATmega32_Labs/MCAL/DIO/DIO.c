@@ -112,6 +112,7 @@ void DIO_write (unint8_t portNumber, unint8_t pinNumber, unint8_t value)
 	}
 }
 void DIO_toggle (unint8_t portNumber, unint8_t pinNumber)
+
 switch (portNumber)
 	{
 	case PORT_A:
@@ -160,4 +161,34 @@ switch (portNumber)
 }
 
 
-void DIO_read (unint8_t portNumber, unint8_t pinNumber, unint8_t* value); //read dio pins */
+void DIO_read (uint8_t portNumber, uint8_t pinNumber, uint8_t* value)
+{
+    switch (portNumber) 
+	{
+        
+	case PORT_A:
+        
+		*value = ( PINA & (1<<pinNumber) ) >> pinNumber; 
+        
+    break;
+    
+    case PORT_B:
+        
+		*value = ( PINB & (1<<pinNumber) ) >> pinNumber; 
+        
+    break;
+    
+    case PORT_C:
+        
+		*value = ( PINC & (1<<pinNumber) ) >> pinNumber; 
+        
+    break;
+    
+    case PORT_D:
+        
+		*value = ( PIND & (1<<pinNumber) ) >> pinNumber; 
+        
+    break;
+}
+
+}
